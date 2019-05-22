@@ -1,0 +1,15 @@
+@using CRUDILICIOUS.Models
+@model Dish
+
+<div class = "col-md-2">
+    <a href="/">Home</a>
+</div>
+<div class = "col-md-10">
+    <h1>@Model.Name</h1>
+    <h3>Created By: @Model.Chef</h3>
+    <p>@Model.Description</p>
+    <p>Tastiness: @Model.Tastiness</p>
+    <p>Calories: @Model.Calories</p>
+</div>
+<a href="/delete/@Model.DishId"><button>Delete</button></a>
+<a href="/edit/@Model.DishId"><button>Edit</button></a>

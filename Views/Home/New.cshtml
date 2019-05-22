@@ -1,0 +1,46 @@
+<h1>Add a new Dish</h1>
+<div class="text-center">
+    @using CRUDILICIOUS.Models
+    @model Dish
+    <form class='col-md-9' asp-action ='CreateDish'asp-controller="Home" method='POST'>
+        <div class="form-group">
+            <span asp-validation-for="Name">Name of Dish</span><br>
+            <label asp-for = "Name"></label>
+            <input type="text" asp-for="Name" class="form-control"  placeholder = "Name">
+        </div>
+
+        <br>
+
+        <div class="form-group">
+            <span asp-validation-for="Chef"></span><br>
+            <label asp-for = "Chef"> Chef's Name</label>
+            <input type="text" asp-for="Chef" class="form-control"  placeholder = "Chef">
+        </div>
+
+        <br>
+
+        <div class="dropdown">
+            <span asp-validation-for="Tastiness"></span><br>
+            <label class="my-1 mr-2" asp-for="Tastiness"></label>
+            <input asp-for= "Tastiness" min = "1" max = "10"class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" >
+
+        </div>
+
+        <br>
+
+        <div class="form-group">
+            <span asp-validation-for="Calories"></span><br>
+            <label asp-for = "Calories">Calories</label>
+            <input type="number" step = "1" pattern="\d+" asp-for="Calories" class="form-control"  placeholder = 0>
+        </div>
+
+        <br>
+
+        <div class="form-group">
+            <span asp-validation-for="Description"></span><br>
+            <label>Description (optional)</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" asp-for="Description"></textarea>
+        </div>
+        <input type="submit" value="Add Dish">
+    </form>
+</div>
